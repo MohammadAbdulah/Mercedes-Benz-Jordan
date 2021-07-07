@@ -9,7 +9,7 @@
     android:orientation="vertical"
     tools:context=".AddCarActivity">
 
-    <include layout="@layout/top_actionbar"/>
+    <include layout="@layout/actionbar_top"/>
 
     <LinearLayout
         android:layout_width="match_parent"

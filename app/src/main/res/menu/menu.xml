@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/ic_car"
+        android:icon="@drawable/ic_car"
+        android:title="Cars"/>
+
+    <item
+        android:id="@+id/ic_service"
+        android:icon="@drawable/ic_phone"
+        android:title="Services"/>
+
+    <item
+        android:id="@+id/ic_notification"
+        android:icon="@drawable/ic_notifications"
+        android:title="Notification"/>
+
+    <item
+        android:id="@+id/ic_menu"
+        android:icon="@drawable/ic_menu"
+        android:title="Menu"/>
+</menu>

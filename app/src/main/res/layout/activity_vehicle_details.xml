@@ -7,17 +7,11 @@
     android:background="@color/charcoal"
     tools:context=".VehicleDetailsActivity">
 
-    <include layout="@layout/top_actionbar"
-        android:id="@+id/topActionbar"
-        android:layout_alignParentTop="true"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent" />
-
     <LinearLayout
+        android:id="@+id/navbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/navbar"
-        android:layout_below="@id/topActionbar">
+        android:layout_alignParentTop="true">
 
         <Button
             android:id="@+id/newVehiclesButton"
@@ -25,14 +19,17 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="New Vehicles"
+            android:textColor="@color/white"
             android:background="@color/buttonColor"
             app:backgroundTint="@null" />
 
         <Button
             android:id="@+id/certifiedPreOwnedButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="Certified Pre-Owned"
+            android:textColor="@color/white"
             android:background="@color/charcoal"
             app:backgroundTint="@null" />
     </LinearLayout>
@@ -172,7 +169,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
         android:layout_below="@id/infoLayout">
 
         <ImageButton
@@ -200,9 +196,4 @@
             android:layout_margin="2dp"
             android:src="@drawable/ic_car"/>
     </LinearLayout>
-
-    <include layout="@layout/bottom_actionbar"
-        android:layout_alignParentBottom="true"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent" />
 </RelativeLayout>

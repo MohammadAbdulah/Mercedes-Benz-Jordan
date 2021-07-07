@@ -4,30 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/charcoal"
+    android:background="@color/black"
     tools:context=".SplashScreenActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/mercedesLogoImageView"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:contentDescription="@string/mercedesBenzLogoDescription"
         android:scaleType="fitCenter"
+        android:src="@mipmap/mercedes_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/app_icon" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="411dp"
-        android:layout_height="129dp"
-        android:layout_marginBottom="48dp"
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/dancer"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
         android:scaleType="fitXY"
+        android:src="@mipmap/splashscreencar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/splash_screen_car1" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

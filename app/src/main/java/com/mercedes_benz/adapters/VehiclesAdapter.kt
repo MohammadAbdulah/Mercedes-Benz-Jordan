@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.mercedes_benz.data.VehiclesData
 import com.mercedes_benz.R
@@ -22,7 +21,7 @@ class VehiclesAdapter(private val vehiclesList: ArrayList<VehiclesData>) :
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         context = viewGroup.context
         val view = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.vehicles_row, viewGroup, false)
+            .inflate(R.layout.row_vehicles, viewGroup, false)
         return ViewHolder(view)
     }
 

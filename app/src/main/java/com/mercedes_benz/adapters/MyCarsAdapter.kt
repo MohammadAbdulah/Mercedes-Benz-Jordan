@@ -19,7 +19,7 @@ class MyCarsAdapter(private val myCarsList: ArrayList<MyCarsModel>) :
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         context = viewGroup.context
         val view = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.my_cars_row, viewGroup, false)
+            .inflate(R.layout.row_my_cars, viewGroup, false)
         return ViewHolder(view)
     }
 
