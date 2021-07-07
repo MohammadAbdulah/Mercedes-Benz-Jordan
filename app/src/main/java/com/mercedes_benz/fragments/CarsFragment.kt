@@ -1,23 +1,27 @@
 package com.mercedes_benz.fragments
 
+import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import com.mercedes_benz.R
-import com.mercedes_benz.adapters.VehiclesAdapter
-import com.mercedes_benz.data.VehiclesData
 
 class CarsFragment : Fragment() {
-    private lateinit var adapter: VehiclesAdapter
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var layoutManager: LinearLayoutManager
-    private val vehiclesList: ArrayList<VehiclesData> = ArrayList()
+    lateinit var context: AppCompatActivity
+    private val carsTypeFragment =  CarsTypeFragment()
+    private val menuFragment =  MenuFragment()
+    private lateinit var sedanItem: TextView
+    private lateinit var cabrioletItem: TextView
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        this.context = context as AppCompatActivity
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,18 +32,23 @@ class CarsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        replaceFragment(carsTypeFragment)
 
-        setPageData(view, vehiclesList)
+        sedanItem = view.findViewById(R.id.sedanCoupesTextView)
+        cabrioletItem = view.findViewById(R.id.cabrioletRoadstersTextView)
+
+        sedanItem.setOnClickListener {
+            replaceFragment(carsTypeFragment)
+        }
+
+        cabrioletItem.setOnClickListener {
+            replaceFragment(menuFragment)
+        }
     }
 
-    private fun setPageData(view: View, vehiclesList: ArrayList<VehiclesData>) {
-        vehiclesList.add(VehiclesData())
-        vehiclesList.add(VehiclesData())
-        adapter = VehiclesAdapter(vehiclesList)
-        recyclerView = view.findViewById(R.id.recyclerView)
-        layoutManager = LinearLayoutManager(context?.applicationContext)
-        recyclerView.layoutManager = layoutManager
-        recyclerView.itemAnimator = DefaultItemAnimator()
-        recyclerView.adapter = adapter
+    private fun replaceFragment(fragment: Fragment) {
+        val transaction: FragmentTransaction = context.supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.inner_fragment_container, fragment)
+        transaction.commit()
     }
 }
