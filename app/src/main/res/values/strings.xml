@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Mercedes-Benz</string>
+    <string name="mercedesBenzLogoDescription">Mercedes-Benz Application Logo</string>
+    <string name="top_actionbar_title">Showroom</string>
+    <string-array name="repairTypes">
+        <item>Electrical Repair</item>
+        <item>Mechanical Repair</item>
+        <item>Service A</item>
+        <item>Service B</item>
+        <item>Body &amp; Paint Repair</item>
+        <item>Other Repairs</item>
+    </string-array>
+    <string-array name="companyNames">
+        <item>AutoCenter - Service Center</item>
+        <item>Body&amp;Paint - Service Center</item>
+    </string-array>
+    <string-array name="employeeNames">
+        <item>Select Your Service Advisor...</item>
+        <item>Ahmad Al Shawesh</item>
+        <item>Sufyan Seder</item>
+        <item>Ashraf Hanafi</item>
+        <item>Rawan Jarrah</item>
+        <item>Husam Laswi</item>
+    </string-array>
+</resources>

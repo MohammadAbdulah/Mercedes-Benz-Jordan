@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/charcoal"
+    android:gravity="center_horizontal"
+    tools:context=".BookServiceActivity">
+
+    <include layout="@layout/top_actionbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp" >
+
+        <Spinner
+            android:id="@+id/repairTypeSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginVertical="7dp"
+            android:entries="@array/repairTypes"/>
+
+        <Spinner
+            android:id="@+id/companyNameSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginVertical="7dp"
+            android:entries="@array/companyNames"/>
+
+        <Spinner
+            android:id="@+id/employeeNameSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginVertical="7dp"
+            android:entries="@array/employeeNames"/>
+
+        <EditText
+            android:id="@+id/datePickerButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="7dp"
+            android:focusable="false"
+            android:clickable="false"
+            android:hint="Pick A Date"
+            android:inputType="none"
+            android:paddingHorizontal="18dp"
+            android:backgroundTint="@color/white"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/timePickerButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="7dp"
+            android:focusable="false"
+            android:clickable="false"
+            android:hint="Pick A Time"
+            android:inputType="none"
+            android:paddingHorizontal="18dp"
+            android:backgroundTint="@color/white"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="7dp"
+            android:text="Send"
+            android:paddingHorizontal="18dp"
+            android:textColor="@color/white"
+            android:background="@color/buttonColor"
+            app:backgroundTint="@null"
+            android:textSize="16sp"/>
+    </LinearLayout>
+</LinearLayout>
