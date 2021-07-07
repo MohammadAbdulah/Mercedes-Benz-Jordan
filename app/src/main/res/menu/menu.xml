@@ -2,12 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/ic_car"
-        android:icon="@drawable/ic_car"
+        android:icon="@drawable/car"
         android:title="Cars"/>
 
     <item
         android:id="@+id/ic_service"
-        android:icon="@drawable/ic_phone"
+        android:icon="@drawable/technics"
+        android:iconTint="@color/white"
         android:title="Services"/>
 
     <item
