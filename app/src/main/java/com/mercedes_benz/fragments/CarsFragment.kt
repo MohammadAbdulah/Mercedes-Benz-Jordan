@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
 import com.mercedes_benz.R
+import com.mercedes_benz.model.FragmentFunctions.Companion.replaceFragment
 
 class CarsFragment : Fragment() {
     lateinit var context: AppCompatActivity
@@ -32,23 +32,17 @@ class CarsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        replaceFragment(carsTypeFragment)
+        replaceFragment(carsTypeFragment, R.id.inner_fragment_container, context)
 
         sedanItem = view.findViewById(R.id.sedanCoupesTextView)
         cabrioletItem = view.findViewById(R.id.cabrioletRoadstersTextView)
 
         sedanItem.setOnClickListener {
-            replaceFragment(carsTypeFragment)
+            replaceFragment(carsTypeFragment, R.id.inner_fragment_container, context)
         }
 
         cabrioletItem.setOnClickListener {
-            replaceFragment(menuFragment)
+            replaceFragment(menuFragment, R.id.inner_fragment_container, context)
         }
-    }
-
-    private fun replaceFragment(fragment: Fragment) {
-        val transaction: FragmentTransaction = context.supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.inner_fragment_container, fragment)
-        transaction.commit()
     }
 }

@@ -5,13 +5,12 @@ import android.net.Uri
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.mercedes_benz.fragments.CarsFragment
 import com.mercedes_benz.fragments.MenuFragment
 import com.mercedes_benz.fragments.NotificationFragment
 import com.mercedes_benz.fragments.ServicesFragment
-
+import com.mercedes_benz.model.FragmentFunctions.Companion.replaceFragment
 
 class MainActivity : AppCompatActivity() {
     private val carsFragment = CarsFragment()
@@ -25,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        replaceFragment(carsFragment)
+        replaceFragment(carsFragment, R.id.fragment_container, this)
 
         callImageView = findViewById(R.id.rightImageView)
         bottomActionbar = findViewById(R.id.bottom_actionbar)
@@ -36,29 +35,23 @@ class MainActivity : AppCompatActivity() {
         bottomActionbar.setOnItemSelectedListener{
             when(it.itemId) {
                 R.id.ic_car -> {
-                    replaceFragment(carsFragment)
+                    replaceFragment(carsFragment, R.id.fragment_container, this)
                     true
                 }
                 R.id.ic_service -> {
-                    replaceFragment(servicesFragment)
+                    replaceFragment(servicesFragment, R.id.fragment_container, this)
                     true
                 }
                 R.id.ic_notification -> {
-                    replaceFragment(notificationFragment)
+                    replaceFragment(notificationFragment, R.id.fragment_container, this)
                     true
                 }
                 R.id.ic_menu -> {
-                    replaceFragment(menuFragment)
+                    replaceFragment(menuFragment, R.id.fragment_container, this)
                     true
                 }
                 else -> false
             }
         }
-    }
-
-    private fun replaceFragment(fragment: Fragment) {
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.fragment_container, fragment)
-        transaction.commit()
     }
 }
