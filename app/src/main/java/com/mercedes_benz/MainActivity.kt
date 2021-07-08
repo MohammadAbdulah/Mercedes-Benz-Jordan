@@ -1,7 +1,10 @@
 package com.mercedes_benz
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.mercedes_benz.fragments.CarsFragment
@@ -9,11 +12,13 @@ import com.mercedes_benz.fragments.MenuFragment
 import com.mercedes_benz.fragments.NotificationFragment
 import com.mercedes_benz.fragments.ServicesFragment
 
+
 class MainActivity : AppCompatActivity() {
     private val carsFragment = CarsFragment()
     private val servicesFragment = ServicesFragment()
     private val notificationFragment = NotificationFragment()
     private val menuFragment = MenuFragment()
+    private lateinit var callImageView: ImageView
     private lateinit var bottomActionbar: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +27,12 @@ class MainActivity : AppCompatActivity() {
 
         replaceFragment(carsFragment)
 
+        callImageView = findViewById(R.id.rightImageView)
         bottomActionbar = findViewById(R.id.bottom_actionbar)
+
+        callImageView.setOnClickListener {
+            startActivity(Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "065805050")))
+        }
         bottomActionbar.setOnItemSelectedListener{
             when(it.itemId) {
                 R.id.ic_car -> {

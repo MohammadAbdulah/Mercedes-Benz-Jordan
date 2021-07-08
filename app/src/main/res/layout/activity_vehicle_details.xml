@@ -169,31 +169,37 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
         android:layout_below="@id/infoLayout">
 
         <ImageButton
+            android:id="@+id/testDriveIcon"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:paddingVertical="10dp"
             android:background="@color/buttonColor"
             android:layout_margin="2dp"
-            android:src="@drawable/car"/>
+            app:tint="@color/white"
+            android:src="@drawable/ic_steering_wheel"/>
 
         <ImageButton
+            android:id="@+id/phoneCallIcon"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/buttonColor"
             android:layout_margin="2dp"
-            android:src="@drawable/car"/>
+            android:src="@drawable/ic_phone"/>
 
         <ImageButton
+            android:id="@+id/whatsappIcon"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@color/buttonColor"
             android:layout_margin="2dp"
-            android:src="@drawable/car"/>
+            android:src="@drawable/ic_whatsapp"
+            app:tint="@color/white" />
     </LinearLayout>
 </RelativeLayout>
