@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import com.mercedes_benz.utilities.PHONE_NUMBER_DIAL
+import com.mercedes_benz.utilities.PHONE_NUMBER_WHATSAPP
 
 class VehicleDetailsActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var phoneCall: ImageView
@@ -29,11 +31,11 @@ class VehicleDetailsActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             R.id.phoneCallIcon -> {
-                startActivity(Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "065805050")))
+                startActivity(Intent(Intent.ACTION_DIAL, Uri.parse("tel:$PHONE_NUMBER_DIAL")))
             }
 
             R.id.whatsappIcon -> {
-                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://api.whatsapp.com/send?phone=0795899084")))
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://api.whatsapp.com/send?phone=$PHONE_NUMBER_WHATSAPP")))
             }
         }
     }

@@ -11,6 +11,7 @@ import com.mercedes_benz.fragments.MenuFragment
 import com.mercedes_benz.fragments.NotificationFragment
 import com.mercedes_benz.fragments.ServicesFragment
 import com.mercedes_benz.model.FragmentFunctions.Companion.replaceFragment
+import com.mercedes_benz.utilities.PHONE_NUMBER_DIAL
 
 class MainActivity : AppCompatActivity() {
     private val carsFragment = CarsFragment()
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         bottomActionbar = findViewById(R.id.bottom_actionbar)
 
         callImageView.setOnClickListener {
-            startActivity(Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "065805050")))
+            startActivity(Intent(Intent.ACTION_DIAL, Uri.parse("tel:$PHONE_NUMBER_DIAL")))
         }
         bottomActionbar.setOnItemSelectedListener{
             when(it.itemId) {
